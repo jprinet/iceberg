@@ -82,6 +82,7 @@ jobs:
             jvm: 21
     env:
       SPARK_LOCAL_IP: localhost
+      DEVELOCITY_ACCESS_KEY: ${{ secrets.DEVELOCITY_ACCESS_KEY }}
     steps:
     - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
       with:
@@ -114,6 +115,8 @@ jobs:
           # Pull requests run the baseline JDK only.
           - event_name: pull_request
             jvm: 21
+    env:
+      DEVELOCITY_ACCESS_KEY: ${{ secrets.DEVELOCITY_ACCESS_KEY }}
     steps:
     - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
       with:
@@ -139,6 +142,8 @@ jobs:
           # Pull requests run the baseline JDK only.
           - event_name: pull_request
             jvm: 21
+    env:
+      DEVELOCITY_ACCESS_KEY: ${{ secrets.DEVELOCITY_ACCESS_KEY }}
     steps:
     - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
       with:
@@ -155,6 +160,8 @@ jobs:
 
   check-runtime-deps:
     runs-on: ubuntu-24.04
+    env:
+      DEVELOCITY_ACCESS_KEY: ${{ secrets.DEVELOCITY_ACCESS_KEY }}
     steps:
     - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
       with:
